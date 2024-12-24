@@ -18,8 +18,9 @@ body {
 }
 .navbar .logo a {
     text-decoration: none;
+    font-family: 'Lucida Sans', Verdana;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: bolder;
     color: #fff;
     align-items: center;
     gap: 10px;
@@ -46,6 +47,8 @@ body {
 
 .nav-links a {
     text-decoration: none;
+    font-style:initial;
+    font-weight: bold;
     color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
@@ -55,54 +58,42 @@ body {
 .nav-links a:hover, a:active {
     background-color: #575757;
 }
-/* Medium screens (tablets, ~768px) */
+/* Mobile styles */
 @media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-    }
-    
-    .logo img {
-        height: 50px;
-    }
-    
     .nav-links {
+        display: none; /* Initially hidden */
         flex-direction: column;
-        align-items: flex-start;
         gap: 10px;
-        width: 100%;
-        margin-top: 10px;
+        background-color: rgb(33, 53, 63);
+        padding: 10px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        border-radius: 8px;
     }
 
-    .nav-links li {
-        display: block;
-        width: 100%;
+    .nav-links.active {
+        display: flex; /* Show the menu when active */
     }
 
-    .nav-links a {
-        display: block;
-        width: 100%;
-        text-align: left;
+    /*.nav-toggle {
+        display: block;  Show the button 
+    }*/
+    .nav-toggle {
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        transition: transform 0.2s ease;
     }
 }
-
-/* Small screens (mobile, ~480px) */
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
+/* Hide the toggle button for larger screens */
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none;
     }
-
-    .logo {
-        margin-bottom: 15px;
-        text-align: center;
-    }
-
     .nav-links {
-        align-items: center;
-    }
-
-    .nav-links a {
-        font-size: 1rem;
-        padding: 10px 15px;
+        display: flex; /* Ensure nav links are visible in large screens */
     }
 }
