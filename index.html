@@ -1,26 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/transparent_logo.png" image/png" crossorigin="anonymous" sizes="34x34">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISE: Home Page</title>
+    <title>ISE: InfoSciHub</title>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">
-            <a href="./"><img src="./images/transparent_logo.png" alt="Logo" >
-            <span>InfoSciHub</span>
-            </a>
-        </div> 
-        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="container navbar-content">
+            <div class="logo">
+                <a href="#" class="logo-link">
+                    <i data-lucide="book-open-check" class="logo-icon"></i>
+                    <span>InfoSciHub</span>
+                </a>
+            </div>
+
+            <ul id="nav-links" class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#quick-links">Links</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu" id="nav-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
     </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+        <div class="container">
+            <h1>
+                Information Science <span>and Engineering</span>
+            </h1>
+            <p>Empowering Tomorrow's Innovators at NMAMIT</p>
+            <a href="#features" class="explore-btn">Explore NMAMIT ISE</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container text-center">
+            <h2>About InfoSciHub</h2>
+            <p>
+                Welcome to <strong>InfoSciHub</strong>, the unofficial online space for Information Science students at
+                NMAMIT.
+                Our goal is to provide an informative platform for students to get resources, stay updated on events,
+                and
+                showcase their achievements. We are committed to fostering a strong, connected academic community.
+            </p>
+        </div>
+    </section>
+
+    <!-- Feature Boxes -->
+    <section id="features" class="features-section">
+        <div class="container features-grid">
+            <div id="openModal" class="feature-box">
+                <div class="box-icon"><i data-lucide="trophy"></i></div>
+                <div class="box-title">Students Achievements</div>
+                <div class="box-description">View the notable accomplishments of our students over the years.</div>
+            </div>
+
+            <div class="feature-box">
+                <div class="box-icon"><i data-lucide="building-2"></i></div>
+                <div class="box-title">Modern Infrastructure</div>
+                <div class="box-description">Gain experience and knowledge with a modern and standard infrastructure for
+                    learning.</div>
+            </div>
+
+            <a href="https://nitte.edu.in/nmamit/department-information-science.php#Faculty" target="_blank"
+                class="feature-box">
+                <div class="box-icon"><i data-lucide="graduation-cap"></i></div>
+                <div class="box-title">Expert Faculty</div>
+                <div class="box-description">Meet the expert and dedicated faculty of ISE at NMAMIT.</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section id="quick-links" class="quick-links-section">
+        <div class="container text-center">
+            <h2>Quick Resources</h2>
+            <div class="quick-links-wrapper">
+                <a href="#" class="quick-link-item">Notices</a>
+                <a href="https://drive.google.com/file/d/1YDLcXWvqqI67g-fSQ_GbK9-T8n64GKnT/view" target="_blank"
+                    class="quick-link-item">Latest Syllabus</a>
+                <a href="#" class="quick-link-item">Upcoming Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>InfoSciHub. Unofficial website for/by Information Science students of NMAMIT.</p>
+            <p>Official Department Page:
+                <a href="https://nitte.edu.in/nmamit/department-information-science.php" target="_blank">
+                    nitte.edu.in/nmamit/department-information-science.php
+                </a>
+            </p>
+            <div id="contact">
+                <h4>Contact Us</h4>
+                <a href="mailto:pdevdat2020@gmail.com">pdevdat2020@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content-area">
+            <div class="modal-header">
+                <h3 id="modal-title">Accomplishment Document</h3>
+                <button id="close-modal-btn" class="modal-close-btn" aria-label="Close">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <p class="pdf-link">
+                <a href="Student Achievements-is.pdf" download
+                    style="color: var(--secondary-color); text-decoration: none;">
+                    Click here to download the PDF document
+                </a> (Placeholder file).
+            </p>
+            <div class="iframe-container">
+                <iframe src="Student Achievements-is.pdf" title="Student Achievements Document"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JS -->
     <script src="script.js"></script>
 </body>
-</html> 
+
+</html>
+
